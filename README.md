@@ -1,1 +1,0 @@
-# shiro-ys.github.io
