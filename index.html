@@ -21,8 +21,8 @@
         sha.update(text);
         return sha.getHash('HEX');
       }
-      function auth(keyword) {
-        const url = hash(keyword);
+      function auth(password) {
+        const url = hash(password);
         const xhr = new XMLHttpRequest();
         xhr.open('GET', url);
         xhr.send();
@@ -31,7 +31,7 @@
             window.location = url;
           } else {
             const message = document.getElementById('message');
-            const input = document.getElementById('keyword');
+            const input = document.getElementById('password');
             message.innerHTML = 'Wrong password! Try again.';
             input.value = '';
           }
@@ -43,8 +43,8 @@
       }
       const form = document.getElementById('form');
       form.addEventListener('submit', function (event) {
-        const keyword = document.getElementById('keyword').value;
-        auth(keyword);
+        const keyword = document.getElementById('password').value;
+        auth(password);
         event.preventDefault();
       });
     </script>
